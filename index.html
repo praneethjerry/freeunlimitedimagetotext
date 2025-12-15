@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Unlimited Text Extractor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+        <button class="header-btn">How to use</button>
+        <h1 class="header-title">Free Unlimited <span class="text-extractor-title">Text Extractor</span></h1>
+        <button id="theme-toggle-btn" class="header-btn">☀️</button>
+    </div>
+
+    <div class="main-container">
+        <div class="language-section">
+            <label>Language Selection</label>
+            <div class="language-selection-underline"></div>
+            <select id="languageSelect">
+                <option value="eng">English</option>
+                <option value="hin">Hindi</option>
+                <option value="tel">Telugu</option>
+                <option value="deu">German</option>
+                <option value="fra">French</option>
+                <option value="spa">Spanish</option>
+            </select>
+        </div>
+
+        <div class="upload-mode-section">
+            <label>Upload Mode</label>
+            <div class="upload-mode-underline"></div>
+            <div class="upload-mode-options">
+                <input type="radio" id="uploadImagesRadio" name="uploadMode" value="images" checked>
+                <label for="uploadImagesRadio">Upload Images</label>
+                <input type="radio" id="uploadFolderRadio" name="uploadMode" value="folder">
+                <label for="uploadFolderRadio">Upload Folder</label>
+            </div>
+        </div>
+
+        <div class="file-input-section">
+            <label for="imageInput" id="selectImagesBtn">Select Images</label>
+            <input type="file" id="imageInput" multiple accept="image/*">
+            
+            <div id="dropZone">Drop your images here</div>
+        </div>
+
+        <div class="bottom-section">
+            <textarea id="output" placeholder="Extracted text will appear here..." readonly></textarea>
+            <div class="action-buttons">
+                <button id="togglePreview">Enable Previews</button>
+                <button id="copyBtn" disabled>Copy Text</button>
+                <button id="startBtn" disabled>Extract Text</button>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div id="progressBar"></div>
+        </div>
+        <div id="statusMsg"></div>
+
+        <div id="previewContainer"></div>
+        <button id="downloadBtn" class="download-btn" disabled>Download as TXT</button>
+    </div>
+    
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <button class="coming-soon-btn">Coming soon</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4"></script>
+    <script src="tesseract-logic.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
